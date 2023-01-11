@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { GithubService } from './github.service';
+import { GithubService } from './Github/github.service';
+import { LoaderService } from './Loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,19 @@ import { GithubService } from './github.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private github: GithubService) {
-    this.github
-      .getGithubData('AkshitGuptaIITR')
-      .subscribe((data) => console.log(data));
-  }
+  constructor(
+    private github: GithubService,
+    private loadingService: LoaderService
+  ) {}
   title = 'github-frontend';
   userNameForm = new FormGroup({
     userName: new FormControl(''),
   });
   handleSubmit() {
-    console.log(this.userNameForm.value);
+    // this.loadingService.setLoading(true);
+    this.github
+      .getGithubData(this.userNameForm.value.userName || '')
+      .subscribe((data) => console.log(data));
+    // this.loadingService.setLoading(false);
   }
 }
