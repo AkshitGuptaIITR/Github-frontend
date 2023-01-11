@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { GithubService } from './github.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(private github: GithubService) {
+    this.github
+      .getGithubData('AkshitGuptaIITR')
+      .subscribe((data) => console.log(data));
+  }
   title = 'github-frontend';
   userNameForm = new FormGroup({
     userName: new FormControl(''),
