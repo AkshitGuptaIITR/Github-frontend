@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shanti&display=swap');
+
+.structure {
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  align-items: center;
+  justify-content: center;
+  /* height: 90vh; */
+  width: 100%;
+}
+
+.structure img {
+  width: 15%;
+  margin-top: 112px;
+  margin-bottom: 24px;
+}
+
+.structure form {
+  width: 35%;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+.structure input {
+  width: 85%;
+  font-weight: inherit;
+  font-family: inherit;
+  height: 36px;
+  color: #36454F;
+  border: none;
+  border-bottom:2px solid #36454F;
+  padding: 12px;
+  /* background-color: inherit; */
+  font-size: 24px;
+}
+
+.structure input:focus{
+  /* border: none; */
+  transition: ease-in 200ms;
+  border-bottom:2px solid #0d6efd;
+  outline: none;
+}
+
+.structure button {
+  font-weight: inherit;
+  font-size: 24px;
+  font-family: inherit;
+  width: 20%;
+  border: none;
+  border-radius: 4px;
+  height: 60px;
+  margin-left: 12px;
+  color: white;
+  background-color: #0d6efd;
+}
+
+.structure button:hover{
+  cursor: pointer;
+}
