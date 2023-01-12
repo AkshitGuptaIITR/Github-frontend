@@ -16,7 +16,8 @@ export class UsernameComponent {
     private github: GithubService,
     private _router: Router,
     private githubData: DataService
-  ) { }
+  ) {
+  }
   userNameForm = new FormGroup({
     userName: new FormControl(''),
   });

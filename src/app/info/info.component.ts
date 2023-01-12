@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../data/data.service';
 
 @Component({
@@ -6,8 +6,6 @@ import { DataService } from '../data/data.service';
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css'],
 })
-
-
 export class InfoComponent {
   gitData;
   bio;

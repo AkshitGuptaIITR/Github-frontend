@@ -1,3 +1,38 @@
-<p>
-  {{ this.bio.login }}
-</p>
+<div class="structure">
+  <div class="profile">
+    <img src="{{ this.bio.avatar_url }}" alt="" />
+    <div class="profileDescription">
+      <h1>
+        {{ this.bio.login}}
+      </h1>
+      <p>
+        {{ this.bio.bio }}
+      </p>
+      <p>
+        <img class="Icon" src="../../assets/location.png" alt="" />
+        {{ this.bio.location }}
+      </p>
+      <p><b>Twitter: </b> {{ this.bio.twitter_username || "Not Added" }}</p>
+    </div>
+  </div>
+  <a class="githubURL" href="{{ this.bio.html_url }}">
+    <img src="../../assets/link.png" class="Icon" alt="" />
+    {{ this.bio.html_url }}
+  </a>
+
+  <div class="repoStructure">
+    <div class="" *ngFor="let repo of repoData">
+      <div class="repo">
+        <div>
+          <h1>
+            {{ repo.name }}
+          </h1>
+          <p>
+            {{ repo.description || "" }}
+          </p>
+        </div>
+        <span *ngIf="repo.language">{{ repo.language }}</span>
+      </div>
+    </div>
+  </div>
+</div>
