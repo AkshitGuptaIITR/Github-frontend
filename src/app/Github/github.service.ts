@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { finalize } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, finalize, throwError } from 'rxjs';
 import { LoaderService } from '../Loader/loader.service';
+import { ErrorMessageService } from '../ErrorMessage/error-message.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,8 @@ import { LoaderService } from '../Loader/loader.service';
 export class GithubService {
   constructor(
     private http: HttpClient,
-    private loadingService: LoaderService
+    private loadingService: LoaderService,
+    private err: ErrorMessageService
   ) { }
 
   getGithubData(userName: string) {
@@ -18,6 +20,16 @@ export class GithubService {
     return this.http.get(url).pipe(
       finalize(() => {
         this.loadingService.setLoading(false);
+      }),
+      catchError((error: HttpErrorResponse) => {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+          errorMessage = `Error ${error.error.message}`;
+        } else {
+          errorMessage = `Error Status: ${error.status} ${error.statusText}`;
+        }
+        this.err.setError(errorMessage);
+        return throwError(errorMessage);
       })
     );
   }
