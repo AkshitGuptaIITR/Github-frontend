@@ -21,11 +21,11 @@
   </a>
 
   <div class="repoStructure">
-    <div class="" *ngFor="let repo of repoData">
+    <div class="" *ngFor="let repo of paginate[currentPage - 1]">
       <div class="repo">
         <div>
           <h1>
-            {{ repo.name }}
+            {{ repo.name || "" }}
           </h1>
           <p>
             {{ repo.description || "" }}
@@ -34,5 +34,25 @@
         <span *ngIf="repo.language">{{ repo.language }}</span>
       </div>
     </div>
+  </div>
+  <div class="paginationBlock">
+    <div class="block" (click)="handleBack()"><<</div>
+    <div
+      *ngFor="let i of paginate; let indexOfPage = index"
+      class="paginationBlock"
+    >
+      <div
+        class="block"
+        (click)="handleSelection(indexOfPage)"
+        [ngClass]="indexOfPage + 1 === currentPage ? 'selected' : ''"
+      >
+        {{ indexOfPage + 1 }}
+      </div>
+    </div>
+    <div class="block" (click)="handleNext()">>></div>
+  </div>
+  <div class="moveStructure">
+    <div class="older"><- Older</div>
+    <div class="newer">Newer -></div>
   </div>
 </div>
