@@ -7,6 +7,5 @@ import { ErrorMessageService } from '../ErrorMessage/error-message.service';
   styleUrls: ['./notification.component.css'],
 })
 export class NotificationComponent {
-  constructor(public error: ErrorMessageService) { }
+  constructor(public error: ErrorMessageService) {}
 }
-

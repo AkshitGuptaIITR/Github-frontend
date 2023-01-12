@@ -5,19 +5,19 @@ import { UsernameComponent } from './username/username.component';
 
 const routes: Routes = [
   {
-    path: "UserName",
-    component: InfoComponent
+    path: 'UserName',
+    component: InfoComponent,
   },
   {
-    path: "",
-    component: UsernameComponent
-  }
+    path: '',
+    component: UsernameComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 
 export const routingComponent = [InfoComponent];

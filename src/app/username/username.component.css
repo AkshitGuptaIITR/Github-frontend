@@ -33,16 +33,16 @@
   height: 36px;
   color: #36454F;
   border: none;
-  border-bottom:2px solid #36454F;
+  border-bottom: 2px solid #36454F;
   padding: 12px;
   /* background-color: inherit; */
   font-size: 24px;
 }
 
-.structure input:focus{
+.structure input:focus {
   /* border: none; */
   transition: ease-in 200ms;
-  border-bottom:2px solid #0d6efd;
+  border-bottom: 2px solid #0d6efd;
   outline: none;
 }
 
@@ -59,6 +59,6 @@
   background-color: #0d6efd;
 }
 
-.structure button:hover{
+.structure button:hover {
   cursor: pointer;
 }

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ErrorMessageService {
   private isError: boolean = false;
   private message: string = '';
 
-  constructor() { }
+  constructor() {}
 
   setError(message: string) {
     this.isError = true;
