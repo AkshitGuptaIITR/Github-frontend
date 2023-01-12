@@ -12,7 +12,7 @@ export class GithubService {
     private http: HttpClient,
     private loadingService: LoaderService,
     private err: ErrorMessageService
-  ) { }
+  ) {}
 
   getGithubData(userName: string) {
     this.loadingService.setLoading(true);
