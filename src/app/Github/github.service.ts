@@ -26,7 +26,7 @@ export class GithubService {
         if (error.error instanceof ErrorEvent) {
           errorMessage = `Error ${error.error.message}`;
         } else {
-          errorMessage = `Error Status: ${error.status} ${error.statusText}`;
+          errorMessage = `Error Status: ${error.status} \n Not Found`;
         }
         this.err.setError(errorMessage);
         return throwError(errorMessage);
