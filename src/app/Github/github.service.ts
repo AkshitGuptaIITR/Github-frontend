@@ -16,7 +16,7 @@ export class GithubService {
 
   getGithubData(userName: string) {
     this.loadingService.setLoading(true);
-    let url = `https://github-backend.onrender.com/api/v1/github/${userName}`;
+    let url = `http://localhost:5000/api/v1/github/${userName}`;
     return this.http.get(url).pipe(
       finalize(() => {
         this.loadingService.setLoading(false);

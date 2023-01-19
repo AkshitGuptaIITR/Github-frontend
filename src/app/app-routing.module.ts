@@ -5,7 +5,7 @@ import { UsernameComponent } from './username/username.component';
 
 const routes: Routes = [
   {
-    path: 'UserName',
+    path: ':userName',
     component: InfoComponent,
   },
   {

@@ -31,7 +31,7 @@ export class UsernameComponent {
   }
 
   handleData() {
-    this._router.navigate(['UserName']);
+    this._router.navigate([this.userNameForm.value.userName]);
     this.githubData.setGithubData(this.gitData);
   }
 }
